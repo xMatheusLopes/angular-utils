@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MasksComponent implements OnInit {
 
+  phone: string;
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  printPhone() {
+    console.log(this.phone);
   }
 
 }
