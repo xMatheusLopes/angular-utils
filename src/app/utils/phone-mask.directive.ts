@@ -11,7 +11,7 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
     }
   ]
 })
-export class PhoneMaskDirective implements ControlValueAccessor{
+export class PhoneMaskDirective implements ControlValueAccessor {
   el: any;
   @Input() phone: string;
 

@@ -57,17 +57,24 @@ form {
         color: $color-highlight
     }
 
-    h1 {
-        font-family: sans-serif;
-        margin: 0;
-        color: $color-accent;
+    div {
+        h1 {
+            font-family: sans-serif;
+            margin: 0;
+            color: $color-accent;
+        }
+    
+        hr {
+            width: 100%;
+            border-top: 1px solid #b3b3b3;
+        }
     }
 
     button {
         padding: 8px;
         font-family: sans-serif;
         font-size: 16px;
-        background-color: black;
+        background-color: #151515;
         color: $color-accent;
         border: none;
         border-radius: 8px;
