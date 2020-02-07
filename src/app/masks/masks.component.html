@@ -1,11 +1,18 @@
 <div class="container">
-    <form>
-        <label for="phone">Máscara phone</label><br>
-        <input id="phone" type="text" name="phone" [(ngModel)]="phone" (keyup)="printPhone()" placeholder="Telefone/Celular" appPhoneMask><br>
-        <br>
-        <label for="email">E-mail pattern</label><br>
-        <input id="email" type="text" placeholder="E-mail" pattern="[a-z0-9.]+@[a-z0-9]+\.[a-z]+\.[a-z]+" title="E-mail">
+    <form [formGroup]="form" (ngSubmit)="submit()">
+        <h1>Formulário</h1>
+        <div class="item">
+            <label for="phone">Máscara phone</label>
+            <input formControlName="phone" id="phone" type="text" (keyup)="printPhone()" placeholder="Telefone/Celular" appPhoneMask>
+            <span *ngIf="phone.touched && phone.errors">Telefone Inválido</span>
+        </div>
+        
+        <div class="item">
+            <label for="email">E-mail pattern</label>
+            <input formControlName="email" id="email" type="text" placeholder="E-mail" pattern="[a-z0-9.]+@[a-z0-9.-]+\.[a-z]+" title="E-mail">
+            <span *ngIf="email.touched && email.errors">E-mail Inválido</span>
+        </div>
 
-        <input type="submit">
+        <button type="submit">Enviar</button>
     </form>
 </div>

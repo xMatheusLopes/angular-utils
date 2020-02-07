@@ -21,22 +21,31 @@ export class PhoneMaskDirective implements ControlValueAccessor{
 
   @HostListener('keyup') onKeyUp() {
     const value = this.getValue();
-    let mask = { 0: '(', 2: ') ' };
-    let valueArr = value.split('');
+    if (value) {
+      let mask = { 0: '(', 2: ') ' };
+      let valueArr = value.split('');
 
-    valueArr = this.validateLength(valueArr);
-    mask = this.completeMask(valueArr, mask);
+      valueArr = this.validateLength(valueArr);
+      mask = this.completeMask(valueArr, mask);
 
-    const newValue = this.setNewValue(valueArr, mask);
+      const newValue = this.setNewValue(valueArr, mask);
 
-    this.el.nativeElement.value = newValue;
+      this.el.nativeElement.value = newValue;
+    }
     this.onChange(value);
+  }
+
+  @HostListener('blur') onBlur() {
+    this.onTouch(true);
   }
 
   getValue() {
     let value = this.el.nativeElement.value;
+
     value = value.match(/\d+/g);
-    value = value.join('');
+    if (value) {
+      value = value.join('');
+    }
 
     return value;
   }
