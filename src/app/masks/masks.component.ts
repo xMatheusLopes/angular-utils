@@ -28,7 +28,7 @@ export class MasksComponent implements OnInit {
   }
 
   submit() {
-
+    alert('Simulação realizada!');
   }
 
   get phone() {
