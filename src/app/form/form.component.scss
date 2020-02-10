@@ -46,6 +46,8 @@ form {
     box-shadow: 10px 10px 21px 3px rgba(0, 0, 0, 0.75);
     padding: 24px 16px;
     margin: 0;
+    margin-bottom: 24px;
+    margin-top: 24px;
 
     label {
         color: $color-text;
@@ -98,12 +100,6 @@ form {
             border-bottom: 16px solid transparent;
             border-top: 16px solid transparent;
         }
-        
-        .triangle-disabled {
-            @extend .triangle;
-            border-left: 16px solid $color-disabled;
-        
-        }
 
         button {
             padding: 8px;
@@ -119,15 +115,26 @@ form {
             margin-top: 0;
             margin-bottom: 0;
             height: 32px;
-    
+            
+            &:hover {
+                background-color: $color-accent;
+            }
+
+            &:hover + .triangle {
+                border-left: 16px solid $color-accent;
+                border-right: 16px solid transparent;
+                border-bottom: 16px solid transparent;
+                border-top: 16px solid transparent;
+            }
+
             &:disabled {
                 background-color: $color-disabled;
                 color: $color-text-disabled;
             }
-        }
-    
-        button:disabled > .triangle {
-            border-left: 16px solid red;
+
+            &:disabled + .triangle {
+                border-left: 16px solid $color-disabled;
+            }
         }
     }
 
