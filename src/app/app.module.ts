@@ -6,12 +6,16 @@ import { AppComponent } from './app.component';
 import { MasksComponent } from './masks/masks.component';
 import { PhoneMaskDirective } from './utils/phone-mask.directive';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CheckboxComponent } from './utils/components/checkbox/checkbox.component';
+import { RadioComponent } from './utils/components/radio/radio.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MasksComponent,
-    PhoneMaskDirective
+    PhoneMaskDirective,
+    CheckboxComponent,
+    RadioComponent
   ],
   imports: [
     BrowserModule,

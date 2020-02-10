@@ -1,0 +1,10 @@
+<div class="radio" [ngClass]="{ 'row': direction == 'row' }">
+    <div *ngFor="let item of items">
+        <label (click)="change(item.value)">{{ item.title }}
+            <div>
+                <input [(ngModel)]="value" type="radio" [value]="item.value" [name]="name">
+                <span></span>
+            </div>
+        </label>
+    </div>
+</div>

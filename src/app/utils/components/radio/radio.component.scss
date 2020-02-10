@@ -1,0 +1,38 @@
+.radio {
+    display: flex;
+    flex-direction: column;
+
+    div {
+        display: flex;
+        flex-direction: row;
+    }
+}
+
+.radio input {
+    position: absolute;
+    z-index: -9999;
+}
+
+.radio span {
+    width: 20px;
+    height: 20px;
+    display: block;
+    background-image: url('../../../../assets/img/unchecked.png');
+    background-size: auto 100%;
+    margin-top: 0;
+    margin-right: 5px;
+}
+
+.radio input:checked + span {
+    background-image: url('../../../../assets/img/radio.png');
+}
+
+.radio label {
+    color: #fff;
+    font-family: sans-serif;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    margin-bottom: 6px;
+    margin-right: 6px;
+}

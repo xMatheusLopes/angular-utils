@@ -9,6 +9,13 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 export class MasksComponent implements OnInit {
   form: FormGroup;
 
+  radioItems = [
+    { title: 'Radio 1', value: 1 },
+    { title: 'Radio 2', value: 2 },
+    { title: 'Radio 3', value: 3 },
+    { title: 'Radio 4', value: 4 }
+  ];
+
   constructor() {
     this.buildForm();
   }
@@ -22,13 +29,18 @@ export class MasksComponent implements OnInit {
 
   buildForm() {
     this.form = new FormGroup({
-      phone: new FormControl('', [ Validators.required, Validators.minLength(10) ]),
-      email: new FormControl('', [ Validators.required ])
+      phone: new FormControl(''),
+      email: new FormControl(''),
+      checkbox: new FormControl(true),
+      checkbox2: new FormControl(false),
+      radio: new FormControl(1),
+      radio2: new FormControl(2)
     });
   }
 
   submit() {
-    alert('Simulação realizada!');
+    alert(this.radio.value);
+    alert(this.radio2.value);
   }
 
   get phone() {
@@ -37,6 +49,22 @@ export class MasksComponent implements OnInit {
 
   get email() {
     return this.form.get('email');
+  }
+
+  get checkbox() {
+    return this.form.get('checkbox');
+  }
+
+  get checkbox2() {
+    return this.form.get('checkbox2');
+  }
+
+  get radio() {
+    return this.form.get('radio');
+  }
+
+  get radio2() {
+    return this.form.get('radio2');
   }
 
 }

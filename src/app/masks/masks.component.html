@@ -18,6 +18,19 @@
             <span *ngIf="email.touched && email.errors && email.errors.required">E-mail é obrigatório</span>
         </div>
 
+        <div class="item row">
+            <app-radio formControlName="radio" [items]="radioItems" [name]="'1'"></app-radio>
+        </div>
+
+        <div class="item row">
+            <app-radio formControlName="radio2" [items]="radioItems" [name]="'2'"></app-radio>
+        </div>
+
+        <div class="item row">
+            <app-checkbox formControlName="checkbox"></app-checkbox>
+            <app-checkbox formControlName="checkbox2"></app-checkbox>
+        </div>
+
         <div class="submit">
             <button type="submit" [disabled]="form.invalid">Enviar</button>
             <div [ngClass]="(form.invalid) ? 'triangle-disabled' : 'triangle'"></div>

@@ -104,7 +104,7 @@ form {
             border-left: 16px solid $color-disabled;
         
         }
-        
+
         button {
             padding: 8px;
             font-family: sans-serif;
@@ -114,6 +114,11 @@ form {
             border: none;
             flex: 1;
             margin-left: 16px;
+            outline: none;
+            margin-right: 0;
+            margin-top: 0;
+            margin-bottom: 0;
+            height: 32px;
     
             &:disabled {
                 background-color: $color-disabled;
